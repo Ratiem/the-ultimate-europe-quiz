@@ -29,7 +29,7 @@ body {
      
 
 /* --------- Game layout */ 
-.game-area {
+#game-area {
     background-color: #E6ECF0;
     box-shadow: 0 0 10px 2px;
     max-width: 45%;
@@ -38,10 +38,37 @@ body {
     padding: 15px;
     }
 
-   .question-area h3{
+#question-area h3{
     margin: 5px;
     } 
 
-    .question {
-        margin: 5px;
+#question {
+    margin: 5px;
     }
+
+/* --------- Answer Area */ 
+
+#answer-area {
+    margin: auto;
+    display: grid;
+    gap: 8px;
+    max-width: 500px;
+    }
+
+.answer-btn {
+    padding: 6px;
+    border: 2px solid black;
+    border-radius: 6px;
+    font-size: large;
+}   
+
+.next-btn {
+    padding: 6px;
+    border: 2px solid black;
+    border-radius: 6px;
+    font-size: large;
+}   
+
+.answer-btn:hover {
+    border: 2px solid black;
+}
