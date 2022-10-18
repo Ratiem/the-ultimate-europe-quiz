@@ -10,7 +10,7 @@
 <body>
     <header>
     <h1 class="heading">The Ultimate Europe Quiz</h1>
-    
+    <img class="logo" src="assets/images/logo.png" alt="europe country signs">
     </header>
 
     <div class="game-area">
@@ -18,7 +18,7 @@
             <h3>Perfect for Trivia Night</h3>
             <h4>True Or False</h4>
         </div>
-        <img class="logo" src="assets/images/logo.png" alt="europe country signs">
+        
         <div class="controls-area">
             <button class="start-btn btn" id="start-button" aria-label="Press here to start quiz">Start Quiz</button>
             <button class="rules-btn btn" id="rules-button" aria-label="Press here to read the rules of the game">Rules</button>
@@ -30,12 +30,14 @@
         <div>
             <h3 id="question">Question <span id="question-number">1</span></h3>
         </div>
-        <img class="logo" src="assets/images/logo.png" alt="europe country signs">
+        
         <p id="question">Question</p>
     </div>
 
     <div class="answer-area">
 
+        <button class="answer-btn" id="answer1" aria-label="Press here to choose answer">True</button>
+        <button class="answer-btn" id="answer2" aria-label="Press here to choose answer">False</button>
     </div>
 
     <div class="score-area">
@@ -43,7 +45,9 @@
         <p class="scores">Incorrect Answers <span id="score">0</span></p>
     </div>
 
-    <div class="end-of-game">
+    <div id="end-of-game" class="hide">
+        <h3>Congratulations you have completed the Quiz!!</h3>
+        <p id="final-score-text"><span id="final-score">0</span></p>
 
     </div>
 

@@ -1,3 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Ubuntu:ital,wght@1,700&display=swap');
+
+/* --------- Global style */
+
+html {
+    background-image:url('../images/background.jpg') ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+    
+}
+
 body {
-    background-color: lightblue;
+   
+    text-align: center;
+    font-family: Open Sans, sans-serif;
+    font-weight: 300;
+    color: #17191b;
+    
+    
+
+ 
 }
