@@ -72,3 +72,19 @@ body {
 .answer-btn:hover {
     border: 2px solid black;
 }
+
+/* --------- Score Area */ 
+
+#score-area {
+    margin: 5px auto;
+    width: 60%;
+    font-size: 1.2rem;
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
