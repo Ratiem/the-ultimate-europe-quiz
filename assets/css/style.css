@@ -88,3 +88,11 @@ body {
 .incorrect {
     color: red;
 }
+
+/* --------- End of Game page */ 
+
+#end-of-game h3 {
+    text-align: center;
+}
+
+
