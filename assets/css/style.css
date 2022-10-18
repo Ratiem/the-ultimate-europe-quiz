@@ -109,3 +109,17 @@ body {
 .btn:hover {
     border: 2px solid black;
 }
+
+/* --------- Classes for Javascript */ 
+
+.hide {
+    display: none;
+}
+
+.btn-correct {
+    background-color:green;
+}
+
+.btn-incorrect {
+    background-color:red;
+}
