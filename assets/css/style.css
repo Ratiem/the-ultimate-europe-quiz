@@ -30,7 +30,7 @@ body {
 
 /* --------- Game layout */ 
 #game-area {
-    background-color: #E6ECF0;
+    background-color: #bbd5e2;
     box-shadow: 0 0 10px 2px;
     max-width: 45%;
     max-height: 75%;
@@ -67,6 +67,7 @@ body {
     border: 2px solid black;
     border-radius: 6px;
     font-size: large;
+    background-color: white;
 }   
 
 .answer-btn:hover {
@@ -95,4 +96,16 @@ body {
     text-align: center;
 }
 
+/* --------- Buttons */ 
 
+.start-btn, .rules-btn {
+    padding: 6px;
+    border: 2px solid black;
+    border-radius: 6px;
+    font-size: large;
+    background-color: white;
+}
+
+.btn:hover {
+    border: 2px solid black;
+}
