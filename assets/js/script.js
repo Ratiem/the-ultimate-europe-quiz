@@ -41,7 +41,15 @@ function rules() {
  */
 
 function runGame() {
-
+   startButton.claaList.add("hide");
+   rulesButton.classList.add("hide");
+   introArea.classList.add("hide");
+   questionArea.classList.add("hide");
+   nextButton.classList.add("hide");
+   logoImg.classList.add("hide");
+   currentQuestionIndex=[0];
+   console.log("Started")
+   questionTitle.innerText=`Question${questionCounter}of ${maxQuestion}`;
 }
 
 function displayQuestion() {
