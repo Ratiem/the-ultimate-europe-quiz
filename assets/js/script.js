@@ -64,8 +64,21 @@ answerOne.addEventListener("click",checkAnswer);
 answerTwo.addEventListener("click",checkAnswer);
 }
 
+/**The nextQuestion function is called when the next button is clicked
+ * A new question is loaded after each click and removes the current question.
+ */
 function nextQuestion() {
-
+console.log("Generating next question...");
+for(let i=0; i<answerButtons.length; i++) {
+    answerButtons[i].classList.remove("btn-correct")
+    answerButtons[i].classList.remove("btn-wrong")
+}
+removedQuestion.push(...question.splice(0,1));
+counter=0;
+if(questioncounter === 12) {
+    endGame();
+    clearInterval(myInterval);
+}
 }
 
 function checkAnswer() {
