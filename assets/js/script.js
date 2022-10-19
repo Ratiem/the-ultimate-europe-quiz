@@ -52,8 +52,16 @@ function runGame() {
    questionTitle.innerText=`Question${questionCounter}of ${maxQuestion}`;
 }
 
-function displayQuestion() {
+/*Function to show when the quiz question is displayed and the 2 possible 
+*answers for the questions.*/
 
+function displayQuestion(currentQuestion) {
+questionElement.innerText=currentQuestion.question;
+answerOne.innerText=currentQuestion.answer1;
+answerTwo.innerText=currentQuestion.answer2;
+
+answerOne.addEventListener("click",checkAnswer);
+answerTwo.addEventListener("click",checkAnswer);
 }
 
 function nextQuestion() {
