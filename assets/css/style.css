@@ -46,6 +46,11 @@ body {
     margin: 5px;
     }
 
+.logo {
+    max-width: 45%;
+    max-height: 75%;
+}
+
 /* --------- Answer Area */ 
 
 #answer-area {
