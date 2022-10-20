@@ -122,7 +122,14 @@ console.log("Your Total Score is"+correctAnsswerCounter);
 }
 
 function endGame() {
-    
+    console.log("Calculating total score...");
+    clearInterval(myInterval);
+    questionArea.classList.add("hide");
+    endofGameArea.classList.remove("hide");
+    finalScoreText.innerHTML=`Congratulations you completed the quiz!Your total socre is:${finalscore}.`;
+    if(correctAsnwercounter<=7) {
+        finalScoreText.innerHTML=`Awww...You only scored${finalscore}. Don't worry, better luck next time!`
+    }
 }
 
 //List of Questions for the Quiz
