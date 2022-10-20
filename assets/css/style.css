@@ -87,14 +87,13 @@ body {
     font-size: 1.2rem;
 }
 
-.correct {
-    color: green;
+#quiz-score {
+    margin: 5px;
 }
 
-.incorrect {
-    color: red;
+#score {
+    margin: 5px;
 }
-
 /* --------- End of Game page */ 
 
 #end-of-game h3 {
@@ -109,6 +108,7 @@ body {
     border-radius: 6px;
     font-size: large;
     background-color: white;
+    margin: 10px;
 }
 
 .btn:hover {

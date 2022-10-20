@@ -3,10 +3,10 @@
  startButton.addEventListener("click",function() {
   runGame();
   myinterval=setInterval(countdown,1000);
-});
+  });
 
 
-rulesButton.addEventListener("click",rules);
+ rulesButton.addEventListener("click",rules);
 
 
  nextButton.addEventListener("click",function() {
@@ -31,10 +31,6 @@ function rules() {
     }
 
 
-
-
-
-
 /**
  * When the Start Quiz button is pressed, the game area appears.
  * The first question is called.
@@ -56,45 +52,69 @@ function runGame() {
 *answers for the questions.*/
 
 function displayQuestion(currentQuestion) {
-questionElement.innerText=currentQuestion.question;
-answerOne.innerText=currentQuestion.answer1;
-answerTwo.innerText=currentQuestion.answer2;
+   questionElement.innerText=currentQuestion.question;
+   answerOne.innerText=currentQuestion.answer1;
+   answerTwo.innerText=currentQuestion.answer2;
 
-answerOne.addEventListener("click",checkAnswer);
-answerTwo.addEventListener("click",checkAnswer);
+   answerOne.addEventListener("click",checkAnswer);
+   answerTwo.addEventListener("click",checkAnswer);
 }
 
 /**The nextQuestion function is called when the next button is clicked
  * A new question is loaded after each click and removes the current question.
  */
 function nextQuestion() {
-console.log("Generating next question...");
+    console.log("Generating next question...");
 for(let i=0; i<answerButtons.length; i++) {
     answerButtons[i].classList.remove("btn-correct")
     answerButtons[i].classList.remove("btn-wrong")
 }
-removedQuestion.push(...question.splice(0,1));
-counter=0;
+    removedQuestion.push(...question.splice(0,1));
+    counter=0;
 if(questioncounter === 12) {
     endGame();
     clearInterval(myInterval);
 }
 }
 
+/*this function checks the correct answer when chosen byt he user from teh questions and highlights the answer
+*in green while the wrong ansers in highlighted in red. 
+*After completing the question displayed the next button is is then deisplayed for the user to move onto to the next question.
+*/
+
 function checkAnswer() {
+   console.log("Checking answer");
+   clearInterval(myinterval);
+   console.log(question[0].correct);
+if(this.innerHTML === question[0].correct) {
+    this.classList.add("btn-correct");
+    console.log("correct!");
+    incremetnScore(scorePoints);
+    } else {
+        this.classList.add("btn-wrong");
+        console.log("Wrong!");
+        for(let i=0;i<answerButtons.length;i++) {
+            if (answerButtons[i].innerHTML === question[0].correct) {
+                answerButtons[i].classList.add("btn-correct")
+            }
+        }
+    }
+    if(questionCounter === 12) {
+        nextButton.innerHTML ="End";
+    }
+    nextButton.classList.remove("hide");
 
-}
-
-function calculateCorrectAnswer() {
-
+    for(leti=0;i<answerButtons.length;i++) {
+        answerButtons[i].removeEventListener("click",CheckAnswer);
+    }
 }
 
 function incrementScore() {
 
 }
 
-function incrementWrongAnswer() {
-
+function endGame() {
+    
 }
 
 //List of Questions for the Quiz
