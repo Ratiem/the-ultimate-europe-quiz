@@ -77,7 +77,7 @@ if(questioncounter === 12) {
 }
 }
 
-/*this function checks the correct answer when chosen byt he user from teh questions and highlights the answer
+/*This function checks the correct answer when chosen byt he user from teh questions and highlights the answer
 *in green while the wrong ansers in highlighted in red. 
 *After completing the question displayed the next button is is then deisplayed for the user to move onto to the next question.
 */
@@ -104,13 +104,21 @@ if(this.innerHTML === question[0].correct) {
     }
     nextButton.classList.remove("hide");
 
-    for(leti=0;i<answerButtons.length;i++) {
-        answerButtons[i].removeEventListener("click",CheckAnswer);
+    for(let i=0;i<answerButtons.length;i++) {
+        answerButtons[i].removeEventListener("click",CheckAnswer);return
     }
 }
 
-function incrementScore() {
+/**
+ * Check the score and increments it by 1 each time the user gets a correct answer.
+ */
 
+function incrementScore() {
+correctAnswerCounter++;
+score=(corectAnswerCounter * scorePoints);
+scoreText.innerText=score;
+console.log("Adding points");
+console.log("Your Total Score is"+correctAnsswerCounter);
 }
 
 function endGame() {
