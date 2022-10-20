@@ -3,7 +3,7 @@
 /* --------- Global style */
 
 html {
-    background-image:url('../images/background.jpg') ;
+    background-image: url('../images/background.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -32,8 +32,8 @@ body {
 #game-area {
     background-color: #bbd5e2;
     box-shadow: 0 0 10px 2px;
-    max-width: 45%;
-    max-height: 75%;
+    max-width: 65%;
+    max-height: 90%;
     margin: auto;
     padding: 15px;
     }
