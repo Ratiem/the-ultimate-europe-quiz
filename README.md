@@ -1,14 +1,34 @@
 # The Ultimate Europe quiz
 
-In this section, you will include one or two paragraphs providing an overview of your project. Essentially, this part is your sales pitch. At this stage, you should have a name for your project so use it! Don’t introduce the project as a Portfolio project for the diploma. In this section, describe what the project hopes to accomplish, who it is intended to target and how it will be useful to the target audience. 
+The Ultimate Europe Quiz is a fun interesting quiz aimed at testing the user on their general knowledge of the European countries in travel and geography. This Simple trivia game is perfect for any get together event as friends or even a simple trivia night. 
 
-For example; The Ultimate Europe quiz is a site that hopes to help keep people motivated to meet up for runs on a regular basis in Dublin, Ireland. The site will be targeted toward runners who are looking for a way to socialise and keep themselves fit. The Ultimate Europe quiz will be useful for runners to see exactly when and where they should be to join the running club. 
+The idea of the project was inspired by my love for Europe and travel. From a young age I have always had a passion for travel after being introduced to the beauty of travel by my parents at a young age. After my first Europe experience I never looked back. I found the questions to be a fun quiz for myself as well to test how much of Europe knowledge I have gathered since my first experience and the idea is that the user enjoys the game as much as l did and is inspired to explore the beauty of Europe one day.
 
-![Responsice Mockup](https://github.com/lucyrush/readme-template/blob/master/media/love_running_mockup.png)
+The content of the quiz is designed for all ages. There are no age restrictions. The website is responsive in all major screen devices that is desktop, laptop, tablet and smartphone.
 
-## Features 
+![Responsive Mockup](https://github.com/lucyrush/readme-template/blob/master/media/love_running_mockup.png)
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so. You will need to explain what value each of the features provides for the user, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
+# Features 
+
+## Home page
+
+On this page you will find the main title and a brief introduction to the quiz. The home page also contains the logo image of Country signs, the start quiz button and rules button.
+
+![Homepage](https://github.com/lucyrush/readme-template/blob/master/media/love_running_mockup.png)
+
+## Rules page
+
+The rules are found on the home page( landing page of the quiz). And these are set to give the user some guidance on how to play the quiz. Once the user has finished reading the rules they will be guided to the start quiz button. The rules will then disappear when the user proceeds to clcik start quiz.
+
+![Rulespage](https://github.com/lucyrush/readme-template/blob/master/media/love_running_mockup.png)
+
+## Quiz page
+
+In this section, after selecting the start quiz button, the user will be directed to the very first question which like always questions to follow will always have two options to choose from(true of false). On the quiz page the user will only see the question, the answer options, the score and the next button which should be clicked after the user has selected the correct answer so as to proceed to the next question.
+
+For each question that the user will be working on they will now what number it is as this will be displayed at the top of the game area. There are 12 questions to answer. The correct answer option turns green when clicked while if the answer is wrong the button turns red.
+
+![Quizpage](https://github.com/lucyrush/readme-template/blob/master/media/love_running_mockup.png)
 
 ### Existing Features
 

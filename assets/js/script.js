@@ -1,27 +1,45 @@
-//Wait for the DOm to finish loading before running the game
+//Wait for the DOM to finish loading before running the game
 //Get the button elements and add event listeners to them
-//decalre global variable
-let maxQuestion = 12;
-let questionCounter = 0;
-//let myInterval = null;
-/*Event listeners*/
+
+//Declare global variables
+
 
 let startButton = document.getElementById("start-button");
-
-startButton.addEventListener("click", function () {
-    runGame();
-    //myInterval = setInterval(countdwon, 1000);
-});
-
 let rulesButton = document.getElementById("rules-button");
+let nextButton = document.getElementById("next-button");
+let introArea = document.getElementById("intro-area");
+let questionArea = document.getElementById("question-area");
+let questionTitle = document.getElementById("question-title");
+let answerButtons = document.getElementsByClassName("answer-btn");
+let score = 0;
+let quizScore = document.getElementById("score");
+let correctAnswerCounter = 0;
+const maxQuestion = 12;
+const scorePoints = 0;
+let questionCounter = 0;
+let finalscore = document.getElementById("final-score");
+let finalScoreText = document.getElementById("final-score-text")
+let removedQuestions = [];
+let answerOne = document.getElementById("answer1");
+let answerTwo = document.getElementById("answer2");
+let logoImg = document.getElementById("logo-img");
+let currentQuestionIndex = [];
+let questionElement = document.getElementById("question");
+let endofGameArea = document.getElementById("end-of-game");
+
+
+//Get the button elements and add the event listeners to them
+
+startButton.addEventListener("click", function() {
+    runGame();
+   });
 
 rulesButton.addEventListener("click", rules);
 
-let nextButton = document.getElementById("next-button");
 
-nextButton.addEventListener("click", function () {
+
+nextButton.addEventListener("click", function() {
     nextQuestion();
-
 });
 
 
@@ -48,22 +66,19 @@ function rules() {
  */
 
 function runGame(questionCounter,maxQuestion) {
-
-    let introArea = document.getElementById("intro-area");
-    let questionArea = document.getElementById("question-area");
-    let questionTitle = document.getElementById("question-title");
-
-    console.log("started");
+   
+    console.log("Started");
     startButton.classList.add("hide");
     rulesButton.classList.add("hide");
     introArea.classList.add("hide");
     questionArea.classList.add("hide");
     nextButton.classList.add("hide");
-    questionCounter = 0;
-
+    questionCounter++;
+    logoImg.classList.add("hide");
+    currentQuestionIndex =[0]
     questionTitle.innerText = `Question ${questionCounter} of ${maxQuestion}`;
-
-    displayQuestion(questionCounter)
+    
+    
 }
 
 /*Function to show when the quiz question is displayed and the 2 possible 
@@ -82,19 +97,19 @@ function displayQuestion(currentQuestion) {
 /**The nextQuestion function is called when the next button is clicked
  * A new question is loaded after each click and removes the current question.
  */
-function nextQuestion(questioncounter,maxQuestion,myInterval) {
-    let removedQuestion = [];
+function nextQuestion(questioncounter,maxQuestion) {
+    
 
     console.log("Generating next question...");
     for (let i = 0; i < answerButtons.length; i++) {
         answerButtons[i].classList.remove("btn-correct");
         answerButtons[i].classList.remove("btn-wrong");
     }
-    removedQuestion.push(...question.splice(0, 1));
+    removedQuestions.push(...question.splice(0, 1));
     //questioncounter = 0;
     if (questioncounter === maxQuestion) {
         endGame();
-       // clearInterval(myInterval);
+       
     }
 }
 
@@ -103,12 +118,12 @@ function nextQuestion(questioncounter,maxQuestion,myInterval) {
  *After completing the question displayed the next button is then deisplayed for the user to move onto to the next question.
  */
 
-function checkAnswer(currentQuestion,myInterval) {
+function checkAnswer(currentQuestion) {
 
-    let answerButtons = document.getElementById("answer1");
+    
 
     console.log("Checking answer");
-    //clearInterval(myinterval);
+   
     console.log(question[0].correct);
     if (this.innerHTML === question[0].correct) {
         this.classList.add("btn-correct");
@@ -139,9 +154,7 @@ function checkAnswer(currentQuestion,myInterval) {
 
 function incrementScore() {
 
-    let score = 0;
-    let scoreText = document.getElementById("score");
-    let correctAnswerCounter = 0;
+    
 
     const scorePoints = 10
 
@@ -152,9 +165,9 @@ function incrementScore() {
     console.log("Your Total Score is" + correctAnswerCounter);
 }
 
-function endGame(myInterval) {
+function endGame() {
     console.log("Calculating total score...");
-    //clearInterval(myInterval);
+   
     questionArea.classList.add("hide");
     endofGameArea.classList.remove("hide");
     finalScoreText.innerHTML = `Congratulations you completed the quiz!Your total socre is:${finalscore}.`;
