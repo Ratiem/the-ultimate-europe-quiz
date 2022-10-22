@@ -15,7 +15,7 @@ let score = 0;
 let quizScore = document.getElementById("score");
 let correctAnswerCounter = 0;
 const maxQuestion = 12;
-const scorePoints = 0;
+const scorePoints = 1;
 let questionCounter = 0;
 let finalscore = document.getElementById("final-score");
 let finalScoreText = document.getElementById("final-score-text")
@@ -71,7 +71,7 @@ function runGame(questionCounter,maxQuestion) {
     startButton.classList.add("hide");
     rulesButton.classList.add("hide");
     introArea.classList.add("hide");
-    questionArea.classList.add("hide");
+    questionArea.classList.remove("hide");
     nextButton.classList.add("hide");
     questionCounter++;
     logoImg.classList.add("hide");
