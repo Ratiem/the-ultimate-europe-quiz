@@ -31,7 +31,7 @@ let endofGameArea = document.getElementById("end-of-game");
 //Get the button elements and add the event listeners to them
 
 startButton.addEventListener("click", function() {
-    runGame();
+    runGame(questionCounter,maxQuestion);
    });
 
 rulesButton.addEventListener("click", rules);
@@ -39,7 +39,7 @@ rulesButton.addEventListener("click", rules);
 
 
 nextButton.addEventListener("click", function() {
-    nextQuestion();
+    nextQuestion(questionCounter,maxQuestion);
 });
 
 
@@ -67,18 +67,18 @@ function rules() {
 
 function runGame(questionCounter,maxQuestion) {
    
-    console.log("Started");
-    startButton.classList.add("hide");
-    rulesButton.classList.add("hide");
-    introArea.classList.add("hide");
-    questionArea.classList.remove("hide");
-    nextButton.classList.add("hide");
-    questionCounter++;
-    logoImg.classList.add("hide");
-    currentQuestionIndex =[0]
-    questionTitle.innerText = `Question ${questionCounter} of ${maxQuestion}`;
-    
-    
+console.log("Started");
+startButton.classList.add("hide");
+rulesButton.classList.add("hide");
+introArea.classList.add("hide");
+questionArea.classList.remove("hide");
+nextButton.classList.add("hide");
+questionCounter++;
+logoImg.classList.add("hide");
+currentQuestionIndex = [questionCounter - 1]
+questionTitle.innerText = `Question ${questionCounter} of ${maxQuestion}`;
+displayQuestion(questions[currentQuestionIndex])
+        
 }
 
 /*Function to show when the quiz question is displayed and the 2 possible 
@@ -86,18 +86,19 @@ function runGame(questionCounter,maxQuestion) {
 
 function displayQuestion(currentQuestion) {
 
-    questionElement.innerText = currentQuestion.question;
-    answerOne.innerText = currentQuestion.answer1;
-    answerTwo.innerText = currentQuestion.answer2;
+console.log(currentQuestion);
+questionElement.innerText = currentQuestion.question;
+answerOne.innerText = currentQuestion.answer1;
+answerTwo.innerText = currentQuestion.answer2;
 
-    answerOne.addEventListener("click", checkAnswer);
-    answerTwo.addEventListener("click", checkAnswer);
+answerOne.addEventListener("click", checkAnswer(currentQuestion));
+answerTwo.addEventListener("click", checkAnswer(currentQuestion));
 }
 
 /**The nextQuestion function is called when the next button is clicked
  * A new question is loaded after each click and removes the current question.
  */
-function nextQuestion(questioncounter,maxQuestion) {
+function nextQuestion() {
     
 
     console.log("Generating next question...");
@@ -113,18 +114,16 @@ function nextQuestion(questioncounter,maxQuestion) {
     }
 }
 
-/*This function checks the correct answer when chosen byt he user from teh questions and highlights the answer
+/*This function checks the correct answer when chosen by the user from teh questions and highlights the answer
  *in green while the wrong ansers in highlighted in red. 
  *After completing the question displayed the next button is then deisplayed for the user to move onto to the next question.
  */
 
 function checkAnswer(currentQuestion) {
-
-    
-
-    console.log("Checking answer");
    
-    console.log(question[0].correct);
+    console.log("currentQuestion");
+   
+    
     if (this.innerHTML === question[0].correct) {
         this.classList.add("btn-correct");
         console.log("correct!");
@@ -154,11 +153,7 @@ function checkAnswer(currentQuestion) {
 
 function incrementScore() {
 
-    
-
-    const scorePoints = 10
-
-    correctAnswerCounter++;
+     correctAnswerCounter++;
     score = (corectAnswerCounter * scorePoints);
     scoreText.innerText = score;
     console.log("Adding points");
