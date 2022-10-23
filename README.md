@@ -78,6 +78,13 @@ I used the following technologies to create this website:
 - The fonts were taken from https://fonts.google.com/ and the inspiration behind the combination of the fonts was taken from https://www.pagecloud.com/blog/best-google-fonts-pairings
 - [Favicon] (https://favicon.io/favicon-generator/)
 - google Chrome Developer tools
+- Google fonts
+- Font Awesome
+- Code Insitute Student template
+- Am l responsive
+- W3C Markup Validation Service
+- Jigsaw CSS Validation Service
+- JSHint JavaScript Code Quality Tool
 
 
 ## Testing 
@@ -94,8 +101,9 @@ The Media responsive elements were built directly in the CSS. The wesbite is res
   - No errors were found when passing through the official [(Jigsaw) validator]
   ![CSStesting](https://github.com/Ratiem/the-ultimate-europe-quiz/blob/main/assets/images/css-testing-page.png)
   
-- JSHint
-  No warnings were found when passing through the office [(JSHint) validator] 
+- JS Validation
+  JSHint was used to check validity of the JavaScript code used for the website and no warnings were found.
+  3 unused variables were found in the list of variables, however these varibales have been declared in the functions
   -
 - LightHouse Report Viewer
  ![Lighthouse](https://github.com/Ratiem/the-ultimate-europe-quiz/blob/main/assets/images/lighthouse-testing.png)
