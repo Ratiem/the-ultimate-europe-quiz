@@ -2,7 +2,81 @@
 //Get the button elements and add event listeners to them
 
 //Declare global variables
+//List of Questions for the Quiz
 
+let questions = [{
+    question: "Europe is the most densely populated continent?",
+    answer1: "True",
+    answer2: "False",
+    Correct: "True",
+},
+{
+    question: "10% of the world population lives in Europe?",
+    answer1: "True",
+    answer2: "False",
+    Correct: "True",
+},
+{
+    question: "Amsterdam, The Netherlands is the largest container port in Europe?",
+    answer1: "True",
+    answer2: "False",
+    Correct: "False",
+},
+{
+    question: "Barcelona is the capital city of Spain?",
+    answer1: "True",
+    answer2: "False",
+    Correct: "False",
+},
+{
+    question: "Buda Castle is located in Prague?",
+    answer1: "True",
+    answer2: "False",
+    Correct: "False",
+},
+{
+    question: "Istanbul, Turkey is the most populous city in Europe?",
+    answer1: "True",
+    answer2: "False",
+    Correct: "True",
+},
+{
+    question: "24 countries are part of the European Union?",
+    answer1: "True",
+    answer2: "False",
+    Correct: "False",
+},
+{
+    question: "You can find the EU headquarters in Berlin, Germany?",
+    answer1: "True",
+    answer2: "False",
+    Correct: "False",
+},
+{
+    question: "Lisbon is the capital of Portugal?",
+    answer1: "True",
+    answer2: "False",
+    Correct: "True",
+},
+{
+    question: "If you are flying to Charles de Gaulle, you are flying to Rome, Italy?",
+    answer1: "True",
+    answer2: "False",
+    Correct: "False",
+},
+{
+    question: "The busiest airport in Germany is Frankfurt Airport?",
+    answer1: "True",
+    answer2: "False",
+    Correct: "True",
+},
+{
+    question: "The Euro was invented in the year 2000?",
+    answer1: "True",
+    answer2: "False",
+    Correct: "False",
+},
+];
 
 let startButton = document.getElementById("start-button");
 let rulesButton = document.getElementById("rules-button");
@@ -23,7 +97,6 @@ let removedQuestions = [];
 let answerOne = document.getElementById("answer1");
 let answerTwo = document.getElementById("answer2");
 let logoImg = document.getElementById("logo-img");
-let currentQuestionIndex = 0;
 let questionElement = document.getElementById("question");
 let endofGameArea = document.getElementById("end-of-game");
 
@@ -67,7 +140,7 @@ function rules() {
  * The first question is called.
  */
 
-function runGame(questionCounter, maxQuestion) {
+function runGame() {
 
     console.log("Started");
     startButton.classList.add("hide");
@@ -75,12 +148,8 @@ function runGame(questionCounter, maxQuestion) {
     introArea.classList.add("hide");
     questionArea.classList.remove("hide");
     nextButton.classList.add("hide");
-    questionCounter++;
     logoImg.classList.add("hide");
-    currentQuestionIndex = [questionCounter - 1];
-    questionTitle.innerText = `Question ${questionCounter} of ${maxQuestion}`;
-    displayQuestion(questions[currentQuestionIndex]);
-    nextQuestion();
+    displayQuestion(questionCounter);
 
 }
 
@@ -89,31 +158,35 @@ function runGame(questionCounter, maxQuestion) {
 
 function displayQuestion(currentQuestion) {
 
-    console.log(currentQuestion);
-    questionElement.innerText = currentQuestion.question;
-    answerOne.innerText = currentQuestion.answer1;
-    answerTwo.innerText = currentQuestion.answer2;
-
-    answerOne.addEventListener("click", checkAnswer(currentQuestion));
-    answerTwo.addEventListener("click", checkAnswer(currentQuestion));
+    questionTitle.innerText = `Question ${(questionCounter + 1)} of ${questions.length}`;
+    console.log("Prossesing question number " + currentQuestion);
+    questionElement.innerText = questions[currentQuestion].question;
+    answerOne.innerText = questions[currentQuestion].answer1;
+    answerTwo.innerText = questions[currentQuestion].answer2;
 }
 
 /**The nextQuestion function is called when the next button is clicked
  * A new question is loaded after each click and removes the current question.
  */
-function nextQuestion(questionCounter, maxQuestion) {
+function nextQuestion() {
 
     console.log("Generating next question...");
+    questionCounter ++;
+
+    displayQuestion(questionCounter);
+
     for (let i = 0; i < answerButtons.length; i++) {
         answerButtons[i].classList.remove("btn-correct");
         answerButtons[i].classList.remove("btn-incorrect");
     }
-    removedQuestions.push(...questions.splice(0, 1));
-    questionCounter = 0;
-    if (questionCounter === maxQuestion) {
+    nextButton.classList.add("hide");
+
+    //removedQuestions.push(...questions.splice(0, 1));
+    //questionCounter = 0;
+   if ((questionCounter + 1) === questions.length) {
         endGame();
 
-    }
+   }
 }
 
 /*This function checks the correct answer when chosen by the user from teh questions and highlights the answer
@@ -121,31 +194,27 @@ function nextQuestion(questionCounter, maxQuestion) {
  *After completing the question displayed the next button is then deisplayed for the user to move onto to the next question.
  */
 
-function checkAnswer() {
+function checkAnswer(clicked) {
     console.log('Checking answer');
 
-    console.log(questions[0].correct);
-    if (this.innerHTML === questions[0].correct) {
-        this.classList.add('btn-correct');
+    let button = clicked == 1 ? answerOne : answerTwo;
+    let question = questions[questionCounter];
+    console.log(question.Correct);
+    if (button.innerHTML === question.Correct) {
+        button.classList.add('btn-correct');
         console.log("Correct!");
-        incrementScore(scorePoints);
+        incrementScore();
     } else {
-        this.classList.add('btn-incorrect');
+        button.classList.add('btn-incorrect');
         console.log("Incorrect!");
-        for (let i = 0; i < answerButtons.length; i++) {
-            if (answerButtons[i].innerHTML === questions[0].correct) {
-                answerButtons[i].classList.add('btn-correct');
-            }
-        }
+        
     }
-    if (questionCounter === 12) {
+    if ((questionCounter +1) === questions.length) {
         nextButton.innerHTML = 'End';
     }
+
     nextButton.classList.remove('hide');
 
-    for (let i = 0; i < answerButtons.length; i++) {
-        answerButtons[i].removeEventListener('click', checkAnswer);
-    }
 }
 
 /**
@@ -172,78 +241,3 @@ function endGame() {
     }
 }
 
-//List of Questions for the Quiz
-
-let questions = [{
-        question: "Europe is the most densely populated continent?",
-        answer1: "True",
-        answer2: "False",
-        Correct: "True",
-    },
-    {
-        question: "10% of the world population lives in Europe?",
-        answer1: "True",
-        answer2: "False",
-        Correct: "True",
-    },
-    {
-        question: "Amsterdam, The Netherlands is the largest container port in Europe?",
-        answer1: "True",
-        answer2: "False",
-        Correct: "False",
-    },
-    {
-        question: "Barcelona is the capital city of Spain?",
-        answer1: "True",
-        answer2: "False",
-        Correct: "False",
-    },
-    {
-        question: "Buda Castle is located in Prague?",
-        answer1: "True",
-        answer2: "False",
-        Correct: "False",
-    },
-    {
-        question: "Istanbul, Turkey is the most populous city in Europe?",
-        answer1: "True",
-        answer2: "False",
-        Correct: "True",
-    },
-    {
-        question: "24 countries are part of the European Union?",
-        answer1: "True",
-        answer2: "False",
-        Correct: "False",
-    },
-    {
-        question: "You can find the EU headquarters in Berlin, Germany?",
-        answer1: "True",
-        answer2: "False",
-        Correct: "False",
-    },
-    {
-        question: "Lisbon is the capital of Portugal?",
-        answer1: "True",
-        answer2: "False",
-        Correct: "True",
-    },
-    {
-        question: "If you are flying to Charles de Gaulle, you are flying to Rome, Italy?",
-        answer1: "True",
-        answer2: "False",
-        Correct: "False",
-    },
-    {
-        question: "The busiest airport in Germany is Frankfurt Airport?",
-        answer1: "True",
-        answer2: "False",
-        Correct: "True",
-    },
-    {
-        question: "The Euro was invented in the year 2000?",
-        answer1: "True",
-        answer2: "False",
-        Correct: "False",
-    },
-];
