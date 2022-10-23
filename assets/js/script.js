@@ -98,9 +98,8 @@ answerTwo.addEventListener("click", checkAnswer(currentQuestion));
 /**The nextQuestion function is called when the next button is clicked
  * A new question is loaded after each click and removes the current question.
  */
-function nextQuestion() {
+function nextQuestion(questionCounter,maxQuestion) {
     
-
     console.log("Generating next question...");
     for (let i = 0; i < answerButtons.length; i++) {
         answerButtons[i].classList.remove("btn-correct");
