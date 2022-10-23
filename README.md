@@ -1,6 +1,6 @@
 # The Ultimate Europe quiz
 
-The Ultimate Europe Quiz is a fun interesting quiz aimed at testing the user on their general knowledge of the European countries in travel and geography. This Simple trivia game is perfect for any get together event as friends or even a simple trivia night. 
+The Ultimate Europe Quiz is a fun interesting quiz aimed at testing the user on their general knowledge of the European Countries in travel and geography. This Simple trivia game is perfect for any get together event as friends or even a simple trivia night. 
 
 The idea of the project was inspired by my love for Europe and travel. From a young age I have always had a passion for travel after being introduced to the beauty of travel by my parents at a young age. After my first Europe experience I never looked back. I found the questions to be a fun quiz for myself as well to test how much of Europe knowledge I have gathered since my first experience and the idea is that the user enjoys the game as much as l did and is inspired to explore the beauty of Europe one day.
 
@@ -18,22 +18,22 @@ On this page you will find the main title and a brief introduction to the quiz. 
 
 ## Rules page
 
-The rules are found on the home page( landing page of the quiz). And these are set to give the user some guidance on how to play the quiz. Once the user has finished reading the rules they will be guided to the start quiz button. The rules will then disappear when the user proceeds to clcik start quiz.
+The rules are found on the home page( landing page of the quiz). And these are set to give the user some guidance on how to play the quiz. Once the user has finished reading the rules they will be guided to the start quiz button. The rules will then disappear when the user proceeds to click the start quiz button.
 
 ![Rulespage](https://github.com/Ratiem/the-ultimate-europe-quiz/blob/main/assets/images/rules-page.png)
 
 ## Quiz page
 
-In this section, after selecting the start quiz button, the user will be directed to the very first question which like always questions to follow will always have two options to choose from(true of false). On the quiz page the user will only see the question, the answer options, the score and the next button which should be clicked after the user has selected the correct answer so as to proceed to the next question.
+In this section, after selecting the start quiz button, the user will be directed to the very first question which like all questions to follow will always have two options to choose from(true of false). On the quiz page the user will only see the question, the answer options, the score and the next button which should be clicked after the user has selected the correct answer so as to proceed to the next question.
 
-For each question that the user will be working on they will now what number it is as this will be displayed at the top of the game area. There are 12 questions to answer. The correct answer option turns green when clicked while if the answer is wrong the button turns red.
+For each question that the user will be working on they will know what number it is as this will be displayed at the top of the game area. There are 12 questions to answer. The correct answer option turns green when clicked while if the answer is wrong the button turns red. 
 
 ![Quizpage](https://github.com/Ratiem/the-ultimate-europe-quiz/blob/main/assets/images/quiz-page.png)
 
 ## End Page
-At the end of the answering the 12 questions, the game is over and the user will click "End" which will then take the user the final page of the game. Ther user will get a congratudlations message for completing the game. 
+At the end of the answering the 12 questions, the game is over and the user will be taken to the final page of the game. The user will get a congratulations message for completing the game. 
 
-Depending on the score the user will get a message of success or a sad one encouraging them that better luck next time. There is no restart button for the player to play the quiz again. The game will marked as over.
+There is no restart button for the player to play the quiz again. The game will marked as over.
 
 ![Endpage](https://github.com/Ratiem/the-ultimate-europe-quiz/blob/main/assets/images/end-page.png)
 
@@ -55,10 +55,10 @@ I was immediately drawn to the font Ubuntu and found the perfect pairing for thi
 
 
 ### Structure
-The website has main pages being:
+The website has 3 main pages being:
 - The Home page which diplays the Intro area. On this page you will find the start quiz and rules button.
 - The Quiz area which displays all the 12 questions one at a time and answer options. At the bottom of this page we also see the score and next button. This page contains the next button and score level.
-- the final page is the end od game page whihc will show the user a closing message and final score.
+- The final page is the end of the game page which will show the user a closing message.
 
 # Technologies Used
 
@@ -69,27 +69,20 @@ Languages
 
 Framework & Tools
 I used the following technologies to create this website:
-- Balsamiq - for my intial testing phase of the layout of the quiz 
+- Balsamiq - for my initial testing phase of the layout of the quiz 
 - HTML 5- for structure
 - CSS- for styling
 - Javascript - for all the game variables and functions
 - Gitpod - for the Website creation and deployment
 - Github - for the final Website hosting
-- The fonts were taken from https://fonts.google.com/ and the inspiration behind the cmobination of teh fonts was taken from https://www.pagecloud.com/blog/best-google-fonts-pairings
+- The fonts were taken from https://fonts.google.com/ and the inspiration behind the combination of the fonts was taken from https://www.pagecloud.com/blog/best-google-fonts-pairings
 - [Favicon] (https://favicon.io/favicon-generator/)
 - google Chrome Developer tools
 
 
 ## Testing 
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your project’s features and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
-
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
-
+The Media responsive elements were built directly in the CSS. The wesbite is responisve across all media ie Laptops, desktops, tablets and smartphones.
 
 ### Validator Testing 
 
@@ -102,14 +95,17 @@ If this section grows too long, you may want to split it off into a separate fil
   ![CSStesting](https://github.com/Ratiem/the-ultimate-europe-quiz/blob/main/assets/images/css-testing-page.png)
   
 - JSHint
-  No warnings were found when passing through the office https://jshint.com/
+  No warnings were found when passing through the office [(JSHint) validator] 
   -
 - LightHouse Report Viewer
  ![Lighthouse](https://github.com/Ratiem/the-ultimate-europe-quiz/blob/main/assets/images/lighthouse-testing.png)
 
-### Unfixed Bugs
+### Bugs to be fixed
 
-You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed. 
+| **Bug** | **Attempted Fixes**| **Result** | 
+|-------------|------------|------------|
+During the final check of the quiz functionality I noticed that the answer buttons allow the use to click twice meaning in all 12 questions the user can click twice instead of once for each question which was the initial plan. 
+
 
 ## Deployment
 
@@ -119,7 +115,7 @@ You will need to mention unfixed bugs and why they were not fixed. This section 
   - In the "Branch" section, from the drop-down menu, select "main" and click on Save;
   - Refresh the page manually. The link to the now deployed website and will display to indicate the successful deployment. 
 
-The live link can be found here -  
+The live link can be found here - https://ratiem.github.io/the-ultimate-europe-quiz/ 
 
 In order to fork this repository, you must:
 - Go to the Github repository.
@@ -131,7 +127,7 @@ You can clone this repository by:
 - Select if you prefer to clone using either HTTPS, SSH, or Github CLI.
 - Click on the copy button to copy the URL to your clipboard.
 - Open Git Bash.
-- change the current working directory to the one where you want to clone the directory to.
+- Change the current working directory to the one where you want to clone the directory to.
 - Type "git clone" and then paste the copied URL from Github.
 - Press enter to cleate your local clone.
 
@@ -153,11 +149,11 @@ You can clone this repository by:
 
 # Acknowledgements
 
-- First of all i would like to thank my daugther as she helped provide support during this time. My family in  general for the unwavering supper throughout my program. 
+- First of all i would like to thank my daugther as she helped provide support during this time. My family in  general for the unwavering support throughout my program so far. 
 - I would also like to acknowledge the slack community for always trying their best to guide us through challenging tasks. 
 - My fellow Students Jeffrey Bull for helping review my code in peer code review.
 - I would also like to thank my fellow Code Insitute student Kelly Hutchison. Her excellent code work was the basis for my project.
 - My friend George Ngcobo who is a former collegue. George is currently a software developer and helped tutor me through the final steps in trying to identify where my code required fixing particularly in javascript. He also helped debug my code. I was challenged to think more and read through more online resources such as stackoverflow.com and search through related videos on youtube.
 - Finally I would like to thank my Mentor Caleb Mbakwe for the continued support
 
-[Back to Top]
+
