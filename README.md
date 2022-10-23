@@ -40,7 +40,7 @@ There is no restart button for the player to play the quiz again. The game will 
 ## Future Features
 
 In future I could possibly add:
-- An option to replay again with possibly a set of new question.
+- An option to replay again with possibly a set of new questions.
 - Timer element to make it more fun.
 
 
@@ -104,7 +104,7 @@ The Media responsive elements were built directly in the CSS. The wesbite is res
 
 | **Bug** | **Attempted Fixes**| **Result** | 
 |-------------|------------|------------|
-During the final check of the quiz functionality I noticed that the answer buttons allow the use to click twice meaning in all 12 questions the user can click twice instead of once for each question which was the initial plan. 
+|During the final check of the quiz functionality I noticed that the answer buttons allow the use to click twice meaning in all 12 questions the user can click twice instead of once for each question which was the initial plan.|Changed the check answer function to look for button classed (button.classList.add) after one answer option assigned by user. |Answers still allow user to click twice. 
 
 
 ## Deployment
