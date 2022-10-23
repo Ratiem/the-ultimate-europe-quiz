@@ -235,9 +235,7 @@ function endGame() {
 
     questionArea.classList.add("hide");
     endofGameArea.classList.remove("hide");
-    finalScoreText.innerHTML = `Congratulations you completed the quiz!Your total socre is:${finalscore}.`;
-    if (correctAnswerCounter <= 7) {
-        finalScoreText.innerHTML = `Awww...You only scored${finalscore}. Don't worry, better luck next time!`;
-    }
+    finalScoreText.innerHTML = `We hope you enjoyed playing the game!`;
+    
 }
 
