@@ -99,7 +99,7 @@ If this section grows too long, you may want to split it off into a separate fil
 
 - CSS
   - No errors were found when passing through the official [(Jigsaw) validator]
-  ![CSStesting]https://github.com/Ratiem/the-ultimate-europe-quiz/blob/main/assets/images/css-testing-page.png
+  ![CSStesting](https://github.com/Ratiem/the-ultimate-europe-quiz/blob/main/assets/images/css-testing-page.png)
   -
 
 ### Unfixed Bugs
