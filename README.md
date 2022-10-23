@@ -6,7 +6,7 @@ The idea of the project was inspired by my love for Europe and travel. From a yo
 
 The content of the quiz is designed for all ages. There are no age restrictions. The website is responsive in all major screen devices that is desktop, laptop, tablet and smartphone.
 
-![Responsive Mockup](https://github.com/Ratiem/the-ultimate-europe-quiz/blob/main/assets/images/Responsiveness.png)
+![Responsive Mockup](https://github.com/Ratiem/the-ultimate-europe-quiz/blob/main/assets/images/responsiveness.png)
 
 # Features 
 
