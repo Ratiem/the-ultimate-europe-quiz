@@ -62,10 +62,16 @@ body {
 
 .answer-btn {
     padding: 6px;
-    border: 2px solid black;
+    font-family: "Ubuntu", Open sans;
+    border: 2px solid blue;
     border-radius: 6px;
     font-size: large;
+    color: black;
 }   
+
+.answer-btn:hover {
+    border-color: black;
+}
 
 .next-btn {
     padding: 6px;
@@ -75,9 +81,7 @@ body {
     background-color: white;
 }   
 
-.answer-btn:hover {
-    border: 2px solid black;
-}
+
 
 /* --------- Score Area */ 
 
@@ -104,7 +108,7 @@ body {
 
 .start-btn, .rules-btn {
     padding: 6px;
-    border: 2px solid black;
+    border: 2px solid blue;
     border-radius: 6px;
     font-size: large;
     background-color: white;

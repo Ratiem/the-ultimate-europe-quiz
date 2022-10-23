@@ -18,28 +18,30 @@ const maxQuestion = 12;
 const scorePoints = 1;
 let questionCounter = 0;
 let finalscore = document.getElementById("final-score");
-let finalScoreText = document.getElementById("final-score-text")
+let finalScoreText = document.getElementById("final-score-text");
 let removedQuestions = [];
 let answerOne = document.getElementById("answer1");
 let answerTwo = document.getElementById("answer2");
 let logoImg = document.getElementById("logo-img");
-let currentQuestionIndex = [];
+let currentQuestionIndex = 0;
 let questionElement = document.getElementById("question");
 let endofGameArea = document.getElementById("end-of-game");
 
 
+
+
 //Get the button elements and add the event listeners to them
 
-startButton.addEventListener("click", function() {
-    runGame(questionCounter,maxQuestion);
-   });
+startButton.addEventListener("click", function () {
+    runGame(questionCounter, maxQuestion);
+});
 
 rulesButton.addEventListener("click", rules);
 
 
 
-nextButton.addEventListener("click", function() {
-    nextQuestion(questionCounter,maxQuestion);
+nextButton.addEventListener("click", function () {
+    nextQuestion(questionCounter, maxQuestion);
 });
 
 
@@ -65,20 +67,21 @@ function rules() {
  * The first question is called.
  */
 
-function runGame(questionCounter,maxQuestion) {
-   
-console.log("Started");
-startButton.classList.add("hide");
-rulesButton.classList.add("hide");
-introArea.classList.add("hide");
-questionArea.classList.remove("hide");
-nextButton.classList.add("hide");
-questionCounter++;
-logoImg.classList.add("hide");
-currentQuestionIndex = [questionCounter - 1]
-questionTitle.innerText = `Question ${questionCounter} of ${maxQuestion}`;
-displayQuestion(questions[currentQuestionIndex])
-        
+function runGame(questionCounter, maxQuestion) {
+
+    console.log("Started");
+    startButton.classList.add("hide");
+    rulesButton.classList.add("hide");
+    introArea.classList.add("hide");
+    questionArea.classList.remove("hide");
+    nextButton.classList.add("hide");
+    questionCounter++;
+    logoImg.classList.add("hide");
+    currentQuestionIndex = [questionCounter - 1];
+    questionTitle.innerText = `Question ${questionCounter} of ${maxQuestion}`;
+    displayQuestion(questions[currentQuestionIndex]);
+    nextQuestion();
+
 }
 
 /*Function to show when the quiz question is displayed and the 2 possible 
@@ -86,30 +89,30 @@ displayQuestion(questions[currentQuestionIndex])
 
 function displayQuestion(currentQuestion) {
 
-console.log(currentQuestion);
-questionElement.innerText = currentQuestion.question;
-answerOne.innerText = currentQuestion.answer1;
-answerTwo.innerText = currentQuestion.answer2;
+    console.log(currentQuestion);
+    questionElement.innerText = currentQuestion.question;
+    answerOne.innerText = currentQuestion.answer1;
+    answerTwo.innerText = currentQuestion.answer2;
 
-answerOne.addEventListener("click", checkAnswer(currentQuestion));
-answerTwo.addEventListener("click", checkAnswer(currentQuestion));
+    answerOne.addEventListener("click", checkAnswer(currentQuestion));
+    answerTwo.addEventListener("click", checkAnswer(currentQuestion));
 }
 
 /**The nextQuestion function is called when the next button is clicked
  * A new question is loaded after each click and removes the current question.
  */
-function nextQuestion(questionCounter,maxQuestion) {
-    
+function nextQuestion(questionCounter, maxQuestion) {
+
     console.log("Generating next question...");
     for (let i = 0; i < answerButtons.length; i++) {
         answerButtons[i].classList.remove("btn-correct");
-        answerButtons[i].classList.remove("btn-wrong");
+        answerButtons[i].classList.remove("btn-incorrect");
     }
-    removedQuestions.push(...question.splice(0, 1));
-    //questioncounter = 0;
-    if (questioncounter === maxQuestion) {
+    removedQuestions.push(...questions.splice(0, 1));
+    questionCounter = 0;
+    if (questionCounter === maxQuestion) {
         endGame();
-       
+
     }
 }
 
@@ -118,31 +121,30 @@ function nextQuestion(questionCounter,maxQuestion) {
  *After completing the question displayed the next button is then deisplayed for the user to move onto to the next question.
  */
 
-function checkAnswer(currentQuestion) {
-   
-    console.log("currentQuestion");
-   
-    
-    if (this.innerHTML === question[0].correct) {
-        this.classList.add("btn-correct");
-        console.log("correct!");
-        incremetnScore(scorePoints);
+function checkAnswer() {
+    console.log('Checking answer');
+
+    console.log(questions[0].correct);
+    if (this.innerHTML === questions[0].correct) {
+        this.classList.add('btn-correct');
+        console.log("Correct!");
+        incrementScore(scorePoints);
     } else {
-        this.classList.add("btn-wrong");
-        console.log("Wrong!");
+        this.classList.add('btn-incorrect');
+        console.log("Incorrect!");
         for (let i = 0; i < answerButtons.length; i++) {
-            if (answerButtons[i].innerHTML === question[0].correct) {
-                answerButtons[i].classList.add("btn-correct");
+            if (answerButtons[i].innerHTML === questions[0].correct) {
+                answerButtons[i].classList.add('btn-correct');
             }
         }
     }
-    if (answerButtons.length === (currentQuestion +1)) {
-        nextButton.innerHTML = "End";
+    if (questionCounter === 12) {
+        nextButton.innerHTML = 'End';
     }
-    nextButton.classList.remove("hide");
+    nextButton.classList.remove('hide');
 
     for (let i = 0; i < answerButtons.length; i++) {
-        answerButtons[i].removeEventListener("click", CheckAnswer(i));
+        answerButtons[i].removeEventListener('click', checkAnswer);
     }
 }
 
@@ -152,21 +154,21 @@ function checkAnswer(currentQuestion) {
 
 function incrementScore() {
 
-     correctAnswerCounter++;
-    score = (corectAnswerCounter * scorePoints);
-    scoreText.innerText = score;
+    correctAnswerCounter++;
+    score = (correctAnswerCounter * scorePoints);
+    quizScore.innerText = score;
     console.log("Adding points");
     console.log("Your Total Score is" + correctAnswerCounter);
 }
 
 function endGame() {
     console.log("Calculating total score...");
-   
+
     questionArea.classList.add("hide");
     endofGameArea.classList.remove("hide");
     finalScoreText.innerHTML = `Congratulations you completed the quiz!Your total socre is:${finalscore}.`;
-    if (correctAsnwercounter <= 7) {
-        finalScoreText.innerHTML = `Awww...You only scored${finalscore}. Don't worry, better luck next time!`
+    if (correctAnswerCounter <= 7) {
+        finalScoreText.innerHTML = `Awww...You only scored${finalscore}. Don't worry, better luck next time!`;
     }
 }
 
