@@ -94,10 +94,12 @@ If this section grows too long, you may want to split it off into a separate fil
 ### Validator Testing 
 
 - HTML
-  - No errors were returned when passing through the official [W3C validator](https://github.com/Ratiem/the-ultimate-europe-quiz/blob/main/assets/images/html-testing%20-page.png)
+  - No errors were returned when passing through the official [W3C validator]
+  ![HTMLtesting](https://github.com/Ratiem/the-ultimate-europe-quiz/blob/main/assets/images/html-testing%20-page.png)
 
 - CSS
-  - No errors were found when passing through the official [(Jigsaw) validator]https://github.com/Ratiem/the-ultimate-europe-quiz/blob/main/assets/images/css-testing-page.png
+  - No errors were found when passing through the official [(Jigsaw) validator]
+  ![CSStesting]https://github.com/Ratiem/the-ultimate-europe-quiz/blob/main/assets/images/css-testing-page.png
   -
 
 ### Unfixed Bugs
