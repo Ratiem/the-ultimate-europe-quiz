@@ -14,13 +14,13 @@ The content of the quiz is designed for all ages. There are no age restrictions.
 
 On this page you will find the main title and a brief introduction to the quiz. The home page also contains the logo image of Country signs, the start quiz button and rules button.
 
-![Homepage]()
+![Homepage](https://github.com/Ratiem/the-ultimate-europe-quiz/blob/main/assets/images/landing-page.png)
 
 ## Rules page
 
 The rules are found on the home page( landing page of the quiz). And these are set to give the user some guidance on how to play the quiz. Once the user has finished reading the rules they will be guided to the start quiz button. The rules will then disappear when the user proceeds to clcik start quiz.
 
-![Rulespage]()
+![Rulespage](https://github.com/Ratiem/the-ultimate-europe-quiz/blob/main/assets/images/rules-page.png)
 
 ## Quiz page
 
@@ -28,12 +28,14 @@ In this section, after selecting the start quiz button, the user will be directe
 
 For each question that the user will be working on they will now what number it is as this will be displayed at the top of the game area. There are 12 questions to answer. The correct answer option turns green when clicked while if the answer is wrong the button turns red.
 
-![Quizpage]()
+![Quizpage](https://github.com/Ratiem/the-ultimate-europe-quiz/blob/main/assets/images/quiz-page.png)
 
 ## End Page
 At the end of the answering the 12 questions, the game is over and the user will click "End" which will then take the user the final page of the game. Ther user will get a congratudlations message for completing the game. 
 
 Depending on the score the user will get a message of success or a sad one encouraging them that better luck next time. There is no restart button for the player to play the quiz again. The game will marked as over.
+
+![Endpage](https://github.com/Ratiem/the-ultimate-europe-quiz/blob/main/assets/images/end-page.png)
 
 ## Future Features
 
@@ -92,10 +94,11 @@ If this section grows too long, you may want to split it off into a separate fil
 ### Validator Testing 
 
 - HTML
-  - No errors were returned when passing through the official [W3C validator]
+  - No errors were returned when passing through the official [W3C validator](https://github.com/Ratiem/the-ultimate-europe-quiz/blob/main/assets/images/html-testing%20-page.png)
 
 - CSS
-  - No errors were found when passing through the official [(Jigsaw) validator]
+  - No errors were found when passing through the official [(Jigsaw) validator]https://github.com/Ratiem/the-ultimate-europe-quiz/blob/main/assets/images/css-testing-page.png
+  -
 
 ### Unfixed Bugs
 
@@ -147,7 +150,7 @@ You can clone this repository by:
 - I would also like to acknowledge the slack community for always trying their best to guide us through challenging tasks. 
 - My fellow Students Jeffrey Bull for helping review my code in peer code review.
 - I would also like to thank my fellow Code Insitute student Kelly Hutchison. Her excellent code work was the basis for my project.
-- My friend George Ngcobo who is a former collegue. George is currently a software developer and helped tutor me through the final steps in trying to identify where my code required fixing particularly in javascript. I was challenged to think more and read through more online resources such as stackoverflow.com.
+- My friend George Ngcobo who is a former collegue. George is currently a software developer and helped tutor me through the final steps in trying to identify where my code required fixing particularly in javascript. He also helped debug my code. I was challenged to think more and read through more online resources such as stackoverflow.com and search through related videos on youtube.
 - Finally I would like to thank my Mentor Caleb Mbakwe for the continued support
 
 [Back to Top]
